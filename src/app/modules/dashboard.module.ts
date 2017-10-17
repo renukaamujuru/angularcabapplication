@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -45,7 +45,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule, AngularFontAwesomeModule, routes, FormsModule, ReactiveFormsModule,
-    BrowserAnimationsModule, HttpModule, AgmCoreModule.forRoot({
+    BrowserAnimationsModule, HttpModule, RouterModule.forChild(routes), AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBWD78mPE333DsOppmymUHAZpAB1lCX4KE',
       libraries: ["places"]
 

@@ -1,13 +1,13 @@
-import { NgModule} from '@angular/core';
-import {HttpModule} from '@angular/http';
+import { NgModule, Component } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgmCoreModule } from '@agm/core';
 
-import { Routes, RouterModule }      from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { SharedModule } from '../shared/shared.module';
 
@@ -17,8 +17,15 @@ import { FooterComponent } from '../footer/footer.component';
 import { BodyComponent } from '../body/body.component';
 
 export const routes: Routes = [
-   { path: '',       component: WelcomeComponent },
-   
+  { 
+    path: '', component: WelcomeComponent
+  
+  },
+  { 
+    path: 'welcome', component: WelcomeComponent
+  
+  }
+
 ]
 @NgModule({
 
@@ -30,14 +37,14 @@ export const routes: Routes = [
     BodyComponent
   ],
   imports: [
-    BrowserModule, AngularFontAwesomeModule,routes,FormsModule,ReactiveFormsModule,
-    BrowserAnimationsModule,HttpModule,SharedModule,RouterModule.forChild(routes),AgmCoreModule.forRoot({
+    BrowserModule, AngularFontAwesomeModule, routes, FormsModule, ReactiveFormsModule,
+    BrowserAnimationsModule, HttpModule, SharedModule, RouterModule.forChild(routes), AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBWD78mPE333DsOppmymUHAZpAB1lCX4KE',
-       libraries: ["places"],
-   
-    
+      libraries: ["places"],
+
+
     })
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

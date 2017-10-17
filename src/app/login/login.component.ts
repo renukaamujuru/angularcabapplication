@@ -11,9 +11,9 @@ import { Component, OnInit } from '@angular/core';
   providers:[connect]
 })
 export class LoginComponent implements OnInit {
-
+ 
   constructor(private service:connect,private routes:Router) { }
-
+ 
   ngOnInit() {
   }
   form=new FormGroup({
@@ -39,6 +39,9 @@ onSubmit(form){
   this.service.postLoginData(data).subscribe(response=>{
     console.log(response);
     let m=response.json();
+    sessionStorage.userid=m.obj._id;
+    sessionStorage.username=m.obj.username;
+    console.log(sessionStorage.username);
     if(m.status==true){
       alert("login successful");
       this.routes.navigate(['/userpage']);

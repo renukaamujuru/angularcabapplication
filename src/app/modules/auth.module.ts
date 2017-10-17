@@ -1,6 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import {HttpModule} from '@angular/http';
-// import { routes } from '../app.router';
+//  import { approutes } from '../app.router';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
@@ -37,7 +37,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule, AngularFontAwesomeModule,FormsModule,ReactiveFormsModule,
-    BrowserAnimationsModule,HttpModule,SharedModule,AgmCoreModule.forRoot({
+    BrowserAnimationsModule,HttpModule,SharedModule, RouterModule.forChild(routes),AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBWD78mPE333DsOppmymUHAZpAB1lCX4KE',
        libraries: ["places"]
     })
